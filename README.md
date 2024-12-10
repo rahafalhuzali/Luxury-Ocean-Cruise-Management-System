@@ -1,6 +1,6 @@
 # Luxury Ocean Cruise Management System
 
-This project is a **Java-based application** designed to reduce the manual workload involved in managing luxury ocean cruises. The system efficiently handles **customers, bookings, timetables**, and other related functionalities. The application is built on **object-oriented programming principles** and provides a menu-based system for managing core operations.
+This project is a **Java-based application** designed to streamline and automate the management of luxury ocean cruises. The system efficiently handles **ships, cruises, passengers**, and other related functionalities. Built using **object-oriented programming principles**, it provides a menu-based interface for managing core operations.
 
 ---
 
@@ -18,14 +18,13 @@ This project is a **Java-based application** designed to reduce the manual workl
 
 The **Luxury Ocean Cruise Management System** aims to:
 1. Automate cruise bookings and operations.
-2. Provide an accurate and efficient ability to coordinate cruise bookings for ship owners and operators.
+2. Provide an accurate and efficient way to coordinate cruise bookings for ship owners and operators.
 3. Ensure no overbooking occurs by managing the number of cabins (balcony, ocean view, suite, interior) per ship.
 
-The system includes the following primary components:
+### Primary Components:
 - **Ships**: Represent the vessels available for cruises.
 - **Cruises**: Represent the individual cruise trips.
 - **Passengers**: Represent the customers booking a cruise.
-- **Tickets**: Represent the booking details for a passenger on a cruise.
 
 ---
 
@@ -34,7 +33,6 @@ The system includes the following primary components:
 - Manage ships with details like room types (balcony, ocean view, suite, interior) and availability.
 - Create and manage cruises assigned to specific ships.
 - Book passengers on cruises with no overbooking allowed.
-- Generate tickets for passengers with detailed booking information.
 - Menu-based interface for easy navigation and operation.
 
 ---
@@ -55,8 +53,10 @@ The following UML diagram illustrates the structure and relationships between th
   - `roomBalcony`, `roomOceanView`, `roomSuite`, `roomInterior`: Number of rooms by type.
   - `inService`: Whether the ship is in service.
 - **Methods**:
-  - Getters and setters for all attributes.
+  - `getShipName()`, `getRoomBalcony()`, `getRoomOceanView()`, `getRoomSuite()`, `getRoomInterior()`, `getInService()`: Getters for attributes.
+  - `setShipName(String cVar)`, `setRoomBalcony(int cVar)`, `setRoomOceanView(int cVar)`, `setRoomSuite(int cVar)`, `setRoomInterior(int cVar)`, `setInService(boolean cVar)`: Setters for attributes.
   - `printShipData()`: Displays ship details.
+  - `toString()`: Returns a string representation of the ship.
 
 ---
 
@@ -66,8 +66,10 @@ The following UML diagram illustrates the structure and relationships between th
   - `cruiseShipName`: Ship assigned to the cruise.
   - `departurePort`, `destination`, `returnPort`: Cruise route information.
 - **Methods**:
-  - Getters and setters for all attributes.
+  - `getCruiseName()`, `getCruiseShip()`, `getDeparturePort()`, `getDestination()`, `getReturnPort()`: Getters for attributes.
+  - `setCruiseName(String cVar)`, `setCruiseShipName(String cVar)`, `setDeparturePort(String cVar)`, `setDestination(String cVar)`, `setReturnPort(String cVar)`: Setters for attributes.
   - `printCruiseDetails()`: Displays cruise details.
+  - `toString()`: Returns a string representation of the cruise.
 
 ---
 
@@ -77,26 +79,24 @@ The following UML diagram illustrates the structure and relationships between th
   - `passengerName`: Name of the passenger.
   - `passengerRoomType`: Type of room booked.
 - **Methods**:
-  - Getters and setters for all attributes.
+  - `getPassengerCruise()`, `getPassengerName()`, `getPassengerRoomType()`: Getters for attributes.
+  - `setPassengerCruise(String cVar)`, `setPassengerName(String cVar)`, `setPassengerRoomType(String cVar)`: Setters for attributes.
   - `printPassenger()`: Displays passenger details.
+  - `toString()`: Returns a string representation of the passenger.
 
 ---
 
-### 4. **Ticket**
+### 4. **Driver**
 - **Attributes**:
-  - `cruise`: The cruise associated with the ticket.
-  - `passenger`: The passenger associated with the ticket.
-  - `price`: Ticket price.
-  - `number`: Ticket number.
+  - `shipList`: ArrayList to store all ships.
+  - `cruiseList`: ArrayList to store all cruises.
+  - `passengerList`: ArrayList to store all passengers.
 - **Methods**:
-  - Getters and setters for all attributes.
-  - `printPassenger()`: Displays ticket details.
+  - `main(String[] args)`: Entry point of the program.
+  - `initializeShipList()`: Initializes the list of ships.
+  - `initializeCruiseList()`: Initializes the list of cruises.
+  - `initializePassengerList()`: Initializes the list of passengers.
+  - `addShip(String tName, int tBalcony, int tOceanView, int tSuite, int tInterior, boolean tInService)`: Adds a new ship to the system.
+  - `printShipList(String listType)`: Prints all ships or those in service.
+  - `printCruiseList(String listType)`: Prints all cruises.
 
----
-
-## How to Run
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/luxury-ocean-cruise.git
-   cd luxury-ocean-cruise
