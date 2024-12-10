@@ -41,7 +41,7 @@ The **Luxury Ocean Cruise Management System** aims to:
 
 The following UML diagram illustrates the structure and relationships between the main classes in the system:
 
-![UML Diagram](UML.jpg)
+![UML Diagram](UML1.jpg)
 
 ---
 
