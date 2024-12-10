@@ -43,7 +43,7 @@ The system includes the following primary components:
 
 The following UML diagram illustrates the structure and relationships between the main classes in the system:
 
-![UML Diagram](diagram.png)
+![UML Diagram](UML.jpg)
 
 ---
 
